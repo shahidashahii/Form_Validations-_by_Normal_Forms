@@ -11,7 +11,7 @@ class StudentForm(forms.Form):
     email=forms.CharField(max_length=100)
     re_enter_email=forms.CharField(max_length=100)
     botcatcher=forms.CharField(max_length=100,widget=forms.HiddenInput,required=False)
-    mobile=forms.CharField(max_length=100,min_length=10,validators=[validators.RegexValidator('[6-9]\d{9}')])
+
     def clean(self):
         e=self.cleaned_data['email']
         r=self.cleaned_data['re_enter_email']
